@@ -9,5 +9,6 @@ https://youtu.be/7lbDvhHPumI
 - **Model:** Contains code files for Mathematical modelling of Robot 
 - **Report:** Documentation on the working of the robot and all the task submissions
 
-
+![picture](https://github.com/iamAkshayrao/LQR-BalanceBot/blob/master/Images/BalanceBot.jpg)
 ### Control Architecture ###
+
