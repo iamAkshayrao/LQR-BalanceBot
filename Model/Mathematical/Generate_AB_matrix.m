@@ -13,18 +13,11 @@ pkg load control
 ##          govern this system.
 function dy = Medbot_dynamics(y, u)
  
-  #Kb=0.005305;
-  #Kt=0.005305;
   Kb=0.3821;
   Kt=0.495;
   n = 30;
   fm=0.0022;
   Rm = 2.17;
- #Kb=0.468;
-  #Kt=0.317;
-  #n = 30;
-  #fm=0.0022;
-  #Rm = 6.69;
   Jw = 10^(-5);
   g = 9.81;
   m = 0.048;
@@ -84,18 +77,12 @@ endfunction
 ## Purpose: Declare the A and B matrices in this function.
 
 function [A,B] = Medbot_AB_matrix(x11,x12,x13,x21,x22,x23,x31,B4,B5,B6,I,J,K)##x11,x12,x13,x21,x22,x23,x31,B4,B5,B6)##E,F,G,H,I,J,K)##)
-    #Kb=0.005305;
-  #Kt=0.005305;
+
   Kb=0.3821;
   Kt=0.495;
   n = 30;
   fm=0.0022;
   Rm = 6.17;
- #Kb=0.468;
-  #Kt=0.317;
-  #n = 30;
-  #fm=0.0022;
-  #Rm = 6.69;
   Jw = 10^(-5);
   g = 9.81;
   m = 0.048;
@@ -111,8 +98,6 @@ function [A,B] = Medbot_AB_matrix(x11,x12,x13,x21,x22,x23,x31,B4,B5,B6,I,J,K)##x
   b = ((n*Kt*Kb)/Rm)+fm;
   Jphi = M*(W^2+D^2)/12;
 
-##  A = [Z eye([2,2]); inv(E)*G  -inv(E)*F];
-##  B = [0; 0; a*(M*L*L + Jpsi + M*L*R); -a*(2*m*R*R + M*R*L + M*R*R)];
   A2 = [0 1; 0 (-J/I)];
   B2 = [0; (-K/I)];
   
@@ -130,7 +115,7 @@ function [A,B] = Medbot_AB_matrix(x11,x12,x13,x21,x22,x23,x31,B4,B5,B6,I,J,K)##x
        -B6];
    disp(A);
    disp(B);
-##   disp('\n');
+
   disp(A2);
   disp(B2);
    
@@ -208,18 +193,12 @@ endfunction
 ##          respective functions.
 function Medbot_main()
   
-  #Kb=0.005305;
-  #Kt=0.005305;
+
   Kb=0.3821;
   Kt=0.150;
   n = 30;
   fm=0.0022;
   Rm = 6.17;
- #Kb=0.468;
-  #Kt=0.317;
-  #n = 30;
-  #fm=0.0022;
-  #Rm = 6.69;
   Jw = 10^(-5);
   g = 9.81;
   m = 0.048;
@@ -246,13 +225,12 @@ function Medbot_main()
   Z = zeros([2,2]);
   
 
-##  
-##  disp(inv(E));
+  disp(inv(E));
  E11 = ((2*m+M)*(R^2))+(2*Jw)+(2*(n^2)*Jm);
   E12 = (M*L*R)-(2*(n^2)*Jm);
   E21 = (M*L*R)-(2*(n^2)*Jm);
   E22 = (M*(L^2))+Jpsi+(2*(n^2)*Jm);
-## 
+
   x11 = -(g*M*L*E12)/((E11*E22)-(E12*E21));
   x12 = -2*((((beta+fw)*E22)+(beta*E12))/((E11*E22)-(E12*E21)));
   x13 = ((2*beta)*(E22+E12))/((E11*E22)-(E12*E21));
