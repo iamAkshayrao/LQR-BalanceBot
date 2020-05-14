@@ -1,6 +1,7 @@
 # LQR-BalanceBot
 
 ### Video ###
+https://youtu.be/7lbDvhHPumI
 
 ### Repository Contents ###
 - **Libraries:** Contains MPU and I2C libraries
