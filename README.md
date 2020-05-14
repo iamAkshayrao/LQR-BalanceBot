@@ -8,4 +8,6 @@ https://youtu.be/7lbDvhHPumI
 - **code:** Contains the code for controlling the bot
 - **Model:** Contains code files for Mathematical modelling of Robot 
 - **Report:** Documentation on the working of the robot and all the task submissions
+
+![Image of Robot](https://octodex.github.com/images/yaktocat.png)
 ### Control Architecture ###
