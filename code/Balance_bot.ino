@@ -8,9 +8,11 @@
  *            update_encoder_states, update_motors, drive_motor, left_encoder_interrupt, right_encoder_interrupt
  *            encoder_config, read_switches, read_joystick, 
  *            
- * Global Variables:
+ * Global Variables: analogMSB1, analogLSB1, analogMSB2, analogLSB2, digitalData, digitalData0, discardByte, 
+ 					 joyposVert, joyposHorz, float k[4] ,float k1[2] ;
  
- 
+LICENSE: 
+
  MIT License
 
 Copyright (c) 2020 Akshay S Rao
@@ -33,6 +35,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */ 
+
+
 
 #include "I2Cdev.h"
 #include "MPU6050.h"
@@ -71,27 +75,27 @@ float k1[2] = {-2,   -0.3};
 
 ISR(TIMER1_OVF_vect)
 {
-TIMSK1 = 0x00;  
-//Serial.println(millis());
-read_tilt_angle();  
-//Serial.println(millis());
-update_encoder_states();
-TCNT1 = Timer_offset;
-TIMSK1 = 0x01;
+	TIMSK1 = 0x00;  
+	//Serial.println(millis());
+	read_tilt_angle();  
+	//Serial.println(millis());
+	update_encoder_states();
+	TCNT1 = Timer_offset;
+	TIMSK1 = 0x01;
 
 }
 
 
 ISR(TIMER5_OVF_vect)
 {
-TIMSK5 = 0x00; 
+	TIMSK5 = 0x00; 
 
-//update_encoder_states(); 
-//Serial.println("ae"); 
- update_motors();
+	//update_encoder_states(); 
+	//Serial.println("ae"); 
+	 update_motors();
 
-TCNT5 = Timer_offset;
-TIMSK5 = 0x01;
+	TCNT5 = Timer_offset;
+	TIMSK5 = 0x01;
 }
 
 
@@ -226,49 +230,49 @@ void read_joystick()
 if(Serial1.available()>=18)//Making sure that the Serial buffer has complete dataframe
 {
 
-while(Serial1.read()!=0x7E);//Checking for start byte
+	while(Serial1.read()!=0x7E);//Checking for start byte
 
 
-for(int i=1;i<=10;i++) //Discarding the next 11 bytes since it contains information like sender address, length
+	for(int i=1;i<=10;i++) //Discarding the next 11 bytes since it contains information like sender address, length
 
-//analog and digital masks
-discardByte  = Serial1.read();
-digitalData0 = Serial1.read();
-digitalData  = Serial1.read(); //Reading Digital input received.
-analogMSB1   = Serial1.read(); //Reading Analog Data 1 which is 16 bit in hexadecimal containing 10 bits useful information from 2-axis joystick.
-analogLSB1   = Serial1.read();
-analogMSB2   = Serial1.read(); //Reading Analog Data 2 which is 16 bit in hexadecimal containing 10 bits useful information from 2-axis joystick.
-analogLSB2   = Serial1.read();
-discardByte  = Serial1.read(); 
+	//analog and digital masks
+	discardByte  = Serial1.read();
+	digitalData0 = Serial1.read();
+	digitalData  = Serial1.read(); //Reading Digital input received.
+	analogMSB1   = Serial1.read(); //Reading Analog Data 1 which is 16 bit in hexadecimal containing 10 bits useful information from 2-axis joystick.
+	analogLSB1   = Serial1.read();
+	analogMSB2   = Serial1.read(); //Reading Analog Data 2 which is 16 bit in hexadecimal containing 10 bits useful information from 2-axis joystick.
+	analogLSB2   = Serial1.read();
+	discardByte  = Serial1.read(); 
 
-//Conversion from hexadecimal to decimal
-int analogReading2 = analogLSB2+(analogMSB2*256);
-int analogReading1 = analogLSB1+(analogMSB1*256);
+	//Conversion from hexadecimal to decimal
+	int analogReading2 = analogLSB2+(analogMSB2*256);
+	int analogReading1 = analogLSB1+(analogMSB1*256);
 
-joyposVert = analogReading1;
-joyposHorz = analogReading2;
+	joyposVert = analogReading1;
+	joyposHorz = analogReading2;
 
-pwm_right_offset = 0;
-pwm_left_offset  = 0;
+	pwm_right_offset = 0;
+	pwm_left_offset  = 0;
 
 
-k[0] = 18.8;
-k[3]= -70.8;
+	k[0] = 18.8;
+	k[3]= -70.8;
 
-read_switches();
+	read_switches();
 
 // bridge mode
 if((bitRead(digitalData,4)) == 0)
 {
   
-//gains for bridge mode  
-k[0] =  22;
-k[3] = -100.2;
+	//gains for bridge mode  
+	k[0] =  22;
+	k[3] = -100.2;
 
-encoder_set_point  = average_theta;  // make position set point whatever the encoder count is now.
-pitch_set_point   -= 0.002;         // vary pitch step wise
-velocity_set_point = 6;            // increase velocity
-pitch_set_point    = constrain(pitch_set_point, -0.048, 0 );
+	encoder_set_point  = average_theta;  // make position set point whatever the encoder count is now.
+	pitch_set_point   -= 0.002;         // vary pitch step wise
+	velocity_set_point = 6;            // increase velocity
+	pitch_set_point    = constrain(pitch_set_point, -0.048, 0 );
 
 }
 
@@ -307,15 +311,15 @@ else if (joyposVert >= 0 && joyposVert<500 && joyposHorz == 1023) //forward
 
 else if (joyposVert == 1023 && joyposHorz > 400)
 {
-  pwm_right_offset = -80;
-  pwm_left_offset  = +80;
+	  pwm_right_offset = -80;
+	  pwm_left_offset  = +80;
 
 }
 else if (joyposVert == 1023 && joyposHorz >=0)
 {
 
-pwm_right_offset = +80;
-pwm_left_offset  = -80;
+	pwm_right_offset = +80;
+	pwm_left_offset  = -80;
 
 }
 
@@ -357,42 +361,42 @@ accelgyro.setZGyroOffset(38);
 
 void setup() 
 {
-cli();
-sei();
+	cli();
+	sei();
 
-// join I2C bus (I2Cdev library doesn't do this automatically)
-#if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
-    Wire.begin();
-#elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
-    Fastwire::setup(400, true);
-#endif
+	// join I2C bus (I2Cdev library doesn't do this automatically)
+	#if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
+	    Wire.begin();
+	#elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
+	    Fastwire::setup(400, true);
+	#endif
 
-// initialize serial communication
+	// initialize serial communication
 
-Serial.begin(19200);
-Serial1.begin(9600);
+	Serial.begin(19200);
+	Serial1.begin(9600);
 
-accelgyro.initialize();
-set_mpu_offset();
-encoder_config();
+	accelgyro.initialize();
+	set_mpu_offset();
+	encoder_config();
 
-encoder_set_point = 0;
-pitch_set_point = 0;
-encoder_set_point = 0;
-velocity_set_point = 0;
+	encoder_set_point = 0;
+	pitch_set_point = 0;
+	encoder_set_point = 0;
+	velocity_set_point = 0;
 
 
-timer1_init();
-timer5_init();
-start_timer1();
-start_timer5();
+	timer1_init();
+	timer5_init();
+	start_timer1();
+	start_timer5();
 
-// pin config for buzzer,led etc.
-pinMode(53,OUTPUT);
-pinMode(51,OUTPUT);
-pinMode(49,OUTPUT);
-pinMode(47,OUTPUT);
-pinMode(45,OUTPUT);
+	// pin config for buzzer,led etc.
+	pinMode(53,OUTPUT);
+	pinMode(51,OUTPUT);
+	pinMode(49,OUTPUT);
+	pinMode(47,OUTPUT);
+	pinMode(45,OUTPUT);
 }
 
  /*************************************************************************************
@@ -405,6 +409,6 @@ pinMode(45,OUTPUT);
  *************************************************************************************/ 
 void loop()
 {
-accelgyro.getMotion6(&ax_raw, &ay_raw, &az_raw, &gx_raw, &gy_raw, &gz_raw);
-read_joystick();
+	accelgyro.getMotion6(&ax_raw, &ay_raw, &az_raw, &gx_raw, &gy_raw, &gz_raw);
+	read_joystick();
 }
