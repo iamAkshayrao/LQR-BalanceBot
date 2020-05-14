@@ -1,7 +1,7 @@
 /*
  * Team Id: eYRC#9
- * Author List: Akshay S Rao, Aliasgar AV, Ankit Kumar, Mohammed Rehab Sait.
- * Filename: eYRC-BP#9_Task5_Code
+ * Author : Akshay S Rao
+ * Filename: Balance_bot.ino
  * Theme: Biped patrol (BP).
  * Functions: setup, loop, timer1_init, timer5_init, start_timer1, start_timer5, set_mpu_offset,
  *            scale_values, lowpassfilter, highpassfilter, complementary_filter, read_tilt_angle,
