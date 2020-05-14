@@ -1,6 +1,6 @@
 # LQR-BalanceBot
 
-### Video Demonstration###
+### Video Demonstration ###
 https://youtu.be/7lbDvhHPumI
 
 ### Repository Contents ###
