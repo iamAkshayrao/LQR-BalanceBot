@@ -126,19 +126,9 @@ void read_tilt_angle()
  *          drive_motors function to control the motor. state space of the controller has 6 states , 
  *          which is divided into two independent controller.
  ****************************************************************************************          
- *          continuous time model
- *           //  pitch and position controller                  // yaw controller
- *          A = [0.00000    0.00000    1.00000    0.00000;     A2 =[ 0.00000    1.00000;                                                              
-                 0.00000    0.00000    0.00000    1.00000;           0.00000  -12.16150];
-                 0.00000   60.72967   -7.83691    7.83691;
-                 0.00000   64.59751    4.42974   -4.42974];    B2 =[0.00000;
-            B = [0.00000;                                          -5.70172];
-                 0.00000;
-                 10.17473;
-                -5.75117];
             u[0] is the pitch and position controller output
             u[1] is the yaw controller output. yaw controller is not used because
-            we are controlling manually through turns.  
+            we are controlling manually through joystick.  
             (v[0] + v[1]) affects only the dynamics of A and B and v[0] - v[1] 
             affects only the yaw dynamics. 
             Let, 𝑢[0] = v[0] + v[1], u[1] = v[0] - v[1]
