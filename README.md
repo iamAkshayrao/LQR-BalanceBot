@@ -27,7 +27,7 @@ https://youtu.be/7lbDvhHPumI
 <p float="left">
   <img src="Images/first_cut.gif" alt="drawing" width="300" height="300"/>
   <img src="Images/second_cut_no_sound.gif" alt="drawing" width="300" height="300"/>
-    <img src="Images/third_cut.gif" alt="drawing" width="300" height="300"/>
+    <img src="Images/thrid_cut.gif" alt="drawing" width="300" height="300"/>
 
 </p>
 
