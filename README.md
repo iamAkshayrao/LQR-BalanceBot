@@ -13,4 +13,15 @@ https://youtu.be/7lbDvhHPumI
 
 ![picture](https://github.com/iamAkshayrao/LQR-BalanceBot/blob/master/Images/BalanceBot.jpg)
 
+### Results Snapshots
+
+**Traversing slope**
+
+<p float="left">
+  <img src="Images/bridge_first.gif" alt="drawing" width="300" height="300"/>
+  <img src="Images/bridge_second.gif" alt="drawing" width="300" height="300"/>
+    <img src="Images/bridge_third.gif" alt="drawing" width="300" height="300"/>
+
+</p>
+
 
