@@ -22,7 +22,7 @@ XBee configuration in API Mode using XCTU Software.
 
 ## Task 4
 Implementation of the mathematical model in code and conduction of following manoeuvres.
-- Balancing the bot at one point with amd without holding items.
+- Balancing the bot at one point with and without holding items.
 - Tracing figure of ‘S’.
 - Crossing the Bridge.
 
