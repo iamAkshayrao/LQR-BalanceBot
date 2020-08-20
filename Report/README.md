@@ -6,6 +6,8 @@
 
 ## Task 1
 - **Task 1.1:** implementing the frequency filters through coding in Octave.
+Developed code for processing GY-87 IMU sensor using complementary filter and verified the results obatined
+
 - **Task 1.2:** implementing Pole Placement Controller and the LQR controller on different types of physical systems.
 
 ## Task 3
@@ -20,7 +22,7 @@ XBee configuration in API Mode using XCTU Software
 
 ## Task 4
 Implementation of the mathematical model in code and conduction of following manoeuvres.
-- Balancing the Medbot at one point without medical items
+- Balancing the bot at one point without medical items
 - Tracing figure of ‘S’
 - Crossing the Bridge
 
