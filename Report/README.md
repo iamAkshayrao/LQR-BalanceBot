@@ -18,3 +18,11 @@ XBee configuration in API Mode using XCTU Software
 
 - **Task 3.3:** Mathematical modelling and derivation of equations of motion of the bot.
 
+## Task 4
+Implementation of the mathematical model in code and conduction of following manoeuvres.
+- Balancing the Medbot at one point without medical items
+- Tracing figure of ‘S’
+- Crossing the Bridge
+
+## Task 5
+- Combining everything to score the maximum points possible.
