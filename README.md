@@ -11,8 +11,6 @@ https://youtu.be/7lbDvhHPumI
 - **Report:** Documentation on the working of the robot and all the task submissions
 - **Images:** contains images
 
-![picture](https://github.com/iamAkshayrao/LQR-BalanceBot/blob/master/Images/BalanceBot.jpg)
-
 ### Results Snapshots
 
 **Traversing slope**
@@ -24,4 +22,18 @@ https://youtu.be/7lbDvhHPumI
 
 </p>
 
+**Object pick up and drop**
 
+<p float="left">
+  <img src="Images/first_cut.gif" alt="drawing" width="300" height="300"/>
+  <img src="Images/second_cut_no_sound.gif" alt="drawing" width="300" height="300"/>
+    <img src="Images/third_cut.gif" alt="drawing" width="300" height="300"/>
+
+</p>
+
+**Position hold**
+
+<p float="left">
+  <img src="Images/positionhold.gif" alt="drawing" width="300" height="300"/>
+
+</p>
