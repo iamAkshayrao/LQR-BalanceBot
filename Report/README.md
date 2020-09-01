@@ -25,6 +25,7 @@ Implementation of the mathematical model in code and conduction of following man
 - Balancing the bot at one point with and without holding items.
 - Tracing figure of ‘S’.
 - Crossing the Bridge.
+**video link: **https://youtu.be/f_yDDDkeyss
 
 ## Task 5
 - Combining everything to score the maximum points possible.
