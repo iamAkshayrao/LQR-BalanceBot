@@ -10,6 +10,9 @@ Developed code for processing GY-87 IMU sensor using complementary filter and ve
 
 - **Task 1.2:** implementing Pole Placement Controller and the LQR controller on different types of physical systems.
 
+## Task 2
+- Hardware testing
+
 ## Task 3
 
 - **Task 3.1:** Arena construction
