@@ -6,7 +6,7 @@
 
 ## Task 1
 - **Task 1.1:** implementing the frequency filters through coding in Octave.
-Developed code for processing GY-87 IMU sensor using complementary filter and verified the results obatined.
+Developed code for processing GY-87 IMU sensor using complementary filter and verified the results obtained.
 
 - **Task 1.2:** implementing Pole Placement Controller and the LQR controller on different types of physical systems.
 
