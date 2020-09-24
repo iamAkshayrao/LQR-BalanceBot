@@ -2,6 +2,7 @@
 pkg load control
 
 ## author Akshay S Rao
+##        Mohammed Rehab Sait
 
 ## Function : Medbot_dynamics()
 ## ----------------------------------------------------
