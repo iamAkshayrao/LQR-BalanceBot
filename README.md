@@ -2,7 +2,7 @@
 LQR-BalanceBot is a two wheel self-balancing robot, based on Arduino Mega. It uses Linear-Quadratic-Regulator, an optimal controller which optimizes a cost function using energy-based method to give optimum gains according to our requirements. A six-state variable state space model has been designed to control position, velocity, yaw (using Quadrature encoders), and tilt angle (using GY-87 sensor) of the bot.
 
 ### Contributors
-Akshay S Rao, Aliasgar AV, Ankit Kumar, Mohammed Rehab Sait
+Akshay S Rao, Aliasgar AV, <href=https://github.com/Ankit-km> Ankit Kumar</href>, Mohammed Rehab Sait
 ### Video Demonstration ###
 https://youtu.be/7lbDvhHPumI
 
