@@ -33,7 +33,7 @@ https://youtu.be/7lbDvhHPumI
 
 ### Architecture
 <p float="left">
-  <img src="Images/Optimal Control.png" alt="drawing" width="300" height="300"/>
+  <img src="Images/Optimal Control.png" alt="architecture"/>
 
 </p>
 
