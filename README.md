@@ -31,6 +31,12 @@ https://youtu.be/7lbDvhHPumI
 
 </p>
 
+### Architecture
+<p float="left">
+  <img src="Images/Optimal Control.png" alt="drawing" width="300" height="300"/>
+
+</p>
+
 
 ### Contributors
 Akshay S Rao, Aliasgar AV, [Ankit Kumar](https://github.com/Ankit-km), [Mohammed Rehab Sait](https://github.com/MohammedRehabS).
