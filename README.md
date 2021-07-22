@@ -31,10 +31,9 @@ https://youtu.be/7lbDvhHPumI
 
 </p>
 
-### Architecture
+### Control Architecture
 <p float="left">
-  <img src="Images/Optimal Control.png" alt="architecture"/>
-
+  <img src="Images/Optimal Control(5).png" alt="architecture"/>
 </p>
 
 
