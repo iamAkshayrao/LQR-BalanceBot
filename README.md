@@ -9,25 +9,25 @@ https://youtu.be/7lbDvhHPumI
 **Traversing slope**
 
 <p float="left">
-  <img src="Images/bridge_first.gif" alt="drawing" width="200" height="200"/>
-  <img src="Images/bridge_second.gif" alt="drawing" width="200" height="200"/>
-    <img src="Images/bridge_third.gif" alt="drawing" width="200" height="200"/>
+  <img src="/Images/bridge_first.gif" alt="drawing" width="200" height="200"/>
+  <img src="/Images/bridge_second.gif" alt="drawing" width="200" height="200"/>
+    <img src="/Images/bridge_third.gif" alt="drawing" width="200" height="200"/>
 
 </p>
 
 **Object pick up and drop**
 
 <p float="left">
-  <img src="Images/first_cut.gif" alt="drawing" width="200" height="200"/>
-  <img src="Images/second_cut_no_sound.gif" alt="drawing" width="200" height="200"/>
-    <img src="Images/thrid_cut.gif" alt="drawing" width="200" height="200"/>
+  <img src="/Images/first_cut.gif" alt="drawing" width="200" height="200"/>
+  <img src="/Images/second_cut_no_sound.gif" alt="drawing" width="200" height="200"/>
+    <img src="/Images/thrid_cut.gif" alt="drawing" width="200" height="200"/>
 
 </p>
 
 **Position hold**
 
 <p float="left">
-  <img src="Images/positionhold.gif" alt="drawing" width="300" height="300"/>
+  <img src="/Images/positionhold.gif" alt="drawing" width="300" height="300"/>
 
 </p>
 
