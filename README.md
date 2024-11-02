@@ -37,10 +37,6 @@ https://youtu.be/7lbDvhHPumI
 </p>
 
 
-### Contributors
-Akshay S Rao, Aliasgar AV, [Ankit Kumar](https://github.com/Ankit-km), [Mohammed Rehab Sait](https://github.com/MohammedRehabS).
-
-
 ### Repository Contents ###
 - **Libraries:** Contains MPU and I2C libraries
 - **code:** Contains the code for controlling the bot
