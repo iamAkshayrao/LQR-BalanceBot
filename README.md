@@ -36,6 +36,8 @@ https://youtu.be/7lbDvhHPumI
   <img src="Images/Optimal Control (5).png" alt="architecture"/>
 </p>
 
+### Contributors
+Akshay, Ali, Ankit, Rehab
 
 ### Repository Contents ###
 - **Libraries:** Contains MPU and I2C libraries
